@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Tier 1 Support Agent</label>
+    <description>Grants Tier 1 support agents access to standard case intake, Email-to-Case handling, and Knowledge Base articles. Scoped to Tier 1 cases only via sharing rules; does not grant escalation or admin permissions.</description>
+
+    <objectPermissions>
+        <object>Case</object>
+        <allowCreate>true</allowCreate>
+        <allowRead>true</allowRead>
+        <allowEdit>true</allowEdit>
+        <allowDelete>false</allowDelete>
+        <viewAllRecords>false</viewAllRecords>
+        <modifyAllRecords>false</modifyAllRecords>
+    </objectPermissions>
+
+    <fieldPermissions>
+        <field>Case.Support_Tier__c</field>
+        <readable>true</readable>
+        <editable>true</editable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <field>Case.Deflected_By_KB__c</field>
+        <readable>true</readable>
+        <editable>true</editable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <field>Case.First_Response_At__c</field>
+        <readable>true</readable>
+        <editable>false</editable>
+    </fieldPermissions>
+
+    <userPermissions>
+        <name>KnowledgeSidebar</name>
+        <enabled>true</enabled>
+    </userPermissions>
+</PermissionSet>
